@@ -13,10 +13,34 @@ export const quizData: QuizData = {
       choices: [
         {
           id: "choose-academic",
-          text: "Help me improve my grades in math",
+          text: "I want to improve my grades in math",
           smartCriteria: { specific: false, measurable: false, achievable: true, relevant: true, timeBound: false },
           feedback: "Great choice! Let's explore how to set SMART academic goals.",
           nextNodeId: "academic-1",
+          score: 0
+        },
+        {
+          id: "choose-vocabulary",
+          text: "I want to learn 10 new English words per week",
+          smartCriteria: { specific: false, measurable: false, achievable: true, relevant: true, timeBound: false },
+          feedback: "Excellent! Building vocabulary is a perfect goal for SMART planning.",
+          nextNodeId: "vocabulary-1",
+          score: 0
+        },
+        {
+          id: "choose-typing",
+          text: "I want to improve my typing speed and accuracy",
+          smartCriteria: { specific: false, measurable: false, achievable: true, relevant: true, timeBound: false },
+          feedback: "Great! Typing skills are valuable and easy to measure progress on.",
+          nextNodeId: "typing-1",
+          score: 0
+        },
+        {
+          id: "choose-punctuality",
+          text: "I want to arrive on time to class",
+          smartCriteria: { specific: false, measurable: false, achievable: true, relevant: true, timeBound: false },
+          feedback: "Smart thinking! Punctuality is an important life skill.",
+          nextNodeId: "punctuality-1",
           score: 0
         },
         {
@@ -28,11 +52,27 @@ export const quizData: QuizData = {
           score: 0
         },
         {
+          id: "choose-running",
+          text: "I want to run faster",
+          smartCriteria: { specific: false, measurable: false, achievable: true, relevant: true, timeBound: false },
+          feedback: "Great choice! Running goals are highly measurable and trackable.",
+          nextNodeId: "running-1",
+          score: 0
+        },
+        {
           id: "choose-creative",
           text: "I'd like to learn guitar",
           smartCriteria: { specific: false, measurable: false, achievable: true, relevant: true, timeBound: false },
           feedback: "Cool! Let's set a SMART goal for your creative journey.",
           nextNodeId: "creative-1",
+          score: 0
+        },
+        {
+          id: "choose-drawing",
+          text: "I want to get better at drawing",
+          smartCriteria: { specific: false, measurable: false, achievable: true, relevant: true, timeBound: false },
+          feedback: "Wonderful! Creative skills improve with focused practice.",
+          nextNodeId: "drawing-1",
           score: 0
         },
         {
@@ -312,6 +352,346 @@ export const quizData: QuizData = {
           text: "Invite everyone from both clubs to a huge party at my house this weekend",
           smartCriteria: { specific: true, measurable: false, achievable: false, relevant: false, timeBound: true },
           feedback: "This might be overwhelming and unrealistic! Building friendships works better with smaller, more personal interactions first. This also might not be achievable if you're new!",
+          nextNodeId: "final",
+          score: 2
+        }
+      ]
+    },
+
+    // VOCABULARY PATH
+    "vocabulary-1": {
+      id: "vocabulary-1",
+      scenario: "Building Your Vocabulary",
+      question: "You want to expand your English vocabulary. You have a vocabulary notebook and access to dictionary apps. You're preparing for an essay writing competition in 8 weeks.\n\nHow would you set your vocabulary goal?",
+      context: "Remember: Make it SMART!",
+      category: "academic",
+      choices: [
+        {
+          id: "vague-vocab",
+          text: "I want to learn lots of new words",
+          smartCriteria: { specific: false, measurable: false, achievable: true, relevant: true, timeBound: false },
+          feedback: "This is too vague! How many is 'lots'? How will you track them? When will you achieve this?",
+          nextNodeId: "vocabulary-2",
+          score: 2
+        },
+        {
+          id: "unrealistic-vocab",
+          text: "I'll learn 100 new words every day starting tomorrow",
+          smartCriteria: { specific: true, measurable: true, achievable: false, relevant: true, timeBound: false },
+          feedback: "100 words per day isn't realistic - you won't remember them all! SMART goals should be achievable and sustainable.",
+          nextNodeId: "vocabulary-2",
+          score: 3
+        },
+        {
+          id: "smart-vocab",
+          text: "I will learn 10 new English words per week for the next 8 weeks by studying 2 words daily Monday-Friday, using them in sentences, and reviewing them on weekends",
+          smartCriteria: { specific: true, measurable: true, achievable: true, relevant: true, timeBound: true },
+          feedback: "Perfect SMART goal! Specific (10 words/week), Measurable (you can count them), Achievable (2 words/day is realistic), Relevant (helps with writing), and Time-bound (8 weeks). Great planning!",
+          nextNodeId: "vocabulary-2",
+          score: 10
+        }
+      ]
+    },
+
+    "vocabulary-2": {
+      id: "vocabulary-2",
+      scenario: "Retention Strategy",
+      question: "You've learned 30 new words in 3 weeks, but you're forgetting some of them. How can you make sure these words stick?",
+      category: "academic",
+      choices: [
+        {
+          id: "no-review",
+          text: "Just keep learning new words and hope I remember",
+          smartCriteria: { specific: false, measurable: false, achievable: true, relevant: false, timeBound: false },
+          feedback: "Without review, you'll forget most words! A SMART approach includes a plan for retention.",
+          nextNodeId: "final",
+          score: 1
+        },
+        {
+          id: "smart-review",
+          text: "Create flashcards for all words, review them 10 minutes daily, use 3 new words in my writing each day, and test myself every Friday",
+          smartCriteria: { specific: true, measurable: true, achievable: true, relevant: true, timeBound: true },
+          feedback: "Excellent! This is a SMART retention plan! Specific actions (flashcards, writing), measurable (3 words/day), achievable (10 min daily), and includes regular testing. Perfect!",
+          nextNodeId: "final",
+          score: 10
+        },
+        {
+          id: "overwhelming-review",
+          text: "Write each word 100 times, memorize the entire dictionary, and read 5 novels this week",
+          smartCriteria: { specific: true, measurable: true, achievable: false, relevant: false, timeBound: true },
+          feedback: "This is overwhelming and not achievable! SMART goals should be realistic and focused on what truly helps.",
+          nextNodeId: "final",
+          score: 2
+        }
+      ]
+    },
+
+    // TYPING PATH
+    "typing-1": {
+      id: "typing-1",
+      scenario: "Keyboard Skills",
+      question: "You currently type at 25 words per minute (WPM) with about 85% accuracy. You have access to typing practice websites. Your school starts requiring typed assignments next quarter (10 weeks).\n\nWhat's your typing goal?",
+      context: "Think SMART: Specific, Measurable, Achievable, Relevant, Time-bound",
+      category: "academic",
+      choices: [
+        {
+          id: "vague-typing",
+          text: "I want to type faster",
+          smartCriteria: { specific: false, measurable: false, achievable: true, relevant: true, timeBound: false },
+          feedback: "Too vague! How much faster? How will you measure improvement? Set specific targets!",
+          nextNodeId: "typing-2",
+          score: 2
+        },
+        {
+          id: "unrealistic-typing",
+          text: "I'll type 120 WPM by next week",
+          smartCriteria: { specific: true, measurable: true, achievable: false, relevant: true, timeBound: true },
+          feedback: "Going from 25 to 120 WPM in one week isn't achievable! Set realistic increments.",
+          nextNodeId: "typing-2",
+          score: 3
+        },
+        {
+          id: "smart-typing",
+          text: "I will improve my typing speed from 25 to 40 WPM while maintaining 95% accuracy within 10 weeks by practicing 15 minutes daily on typing websites",
+          smartCriteria: { specific: true, measurable: true, achievable: true, relevant: true, timeBound: true },
+          feedback: "Outstanding SMART goal! Specific metrics (25→40 WPM, 95% accuracy), measurable, realistic improvement, relevant to your needs, clear deadline, and specific practice plan!",
+          nextNodeId: "typing-2",
+          score: 10
+        }
+      ]
+    },
+
+    "typing-2": {
+      id: "typing-2",
+      scenario: "Building the Habit",
+      question: "You've been practicing for 2 weeks and improved to 30 WPM! But you keep forgetting to practice. How do you stay consistent?",
+      category: "academic",
+      choices: [
+        {
+          id: "random-practice",
+          text: "Practice whenever I remember",
+          smartCriteria: { specific: false, measurable: false, achievable: true, relevant: true, timeBound: false },
+          feedback: "Random practice won't build a habit! SMART goals need specific timing and structure.",
+          nextNodeId: "final",
+          score: 1
+        },
+        {
+          id: "smart-habit",
+          text: "Practice every day right after lunch for 15 minutes, track progress weekly in a spreadsheet, and set a phone reminder at 12:30 PM",
+          smartCriteria: { specific: true, measurable: true, achievable: true, relevant: true, timeBound: true },
+          feedback: "Perfect SMART habit-building! Specific time (after lunch), measurable tracking (spreadsheet), achievable duration (15 min), with accountability (reminder). This ensures consistency!",
+          nextNodeId: "final",
+          score: 10
+        },
+        {
+          id: "excessive-practice",
+          text: "Practice for 5 hours every day and type everything I do",
+          smartCriteria: { specific: true, measurable: true, achievable: false, relevant: false, timeBound: false },
+          feedback: "This is excessive and will lead to burnout! SMART goals should be sustainable.",
+          nextNodeId: "final",
+          score: 2
+        }
+      ]
+    },
+
+    // PUNCTUALITY PATH
+    "punctuality-1": {
+      id: "punctuality-1",
+      scenario: "Arriving On Time",
+      question: "You're often 5-10 minutes late to your first class. It's a 15-minute walk from home, and class starts at 8:00 AM. You want to change this habit.\n\nWhat's your goal?",
+      context: "Make it SMART!",
+      category: "academic",
+      choices: [
+        {
+          id: "vague-time",
+          text: "I want to be on time more often",
+          smartCriteria: { specific: false, measurable: false, achievable: true, relevant: true, timeBound: false },
+          feedback: "'More often' isn't specific enough! How often? What's your target? Be precise!",
+          nextNodeId: "punctuality-2",
+          score: 2
+        },
+        {
+          id: "unrealistic-time",
+          text: "I'll arrive 30 minutes early to every class starting tomorrow",
+          smartCriteria: { specific: true, measurable: true, achievable: false, relevant: false, timeBound: true },
+          feedback: "30 minutes early might not be sustainable or necessary. SMART goals should be realistic and relevant!",
+          nextNodeId: "punctuality-2",
+          score: 3
+        },
+        {
+          id: "smart-time",
+          text: "I will arrive to first period at least 5 minutes early every day for the next 4 weeks by leaving home at 7:35 AM and setting two alarms at 7:00 and 7:20 AM",
+          smartCriteria: { specific: true, measurable: true, achievable: true, relevant: true, timeBound: true },
+          feedback: "Excellent SMART goal! Specific (5 min early), measurable (can track daily), achievable (realistic buffer time), relevant (improves punctuality), time-bound (4 weeks), with clear action steps (leave 7:35, set alarms)!",
+          nextNodeId: "punctuality-2",
+          score: 10
+        }
+      ]
+    },
+
+    "punctuality-2": {
+      id: "punctuality-2",
+      scenario: "Staying Consistent",
+      question: "After 2 weeks, you've been on time 12 out of 14 days! But mornings are still hard. How do you maintain this success?",
+      category: "academic",
+      choices: [
+        {
+          id: "no-system",
+          text: "Keep doing what I'm doing and hope it continues",
+          smartCriteria: { specific: false, measurable: false, achievable: true, relevant: true, timeBound: false },
+          feedback: "Hope isn't a strategy! SMART goals need specific systems to maintain success.",
+          nextNodeId: "final",
+          score: 2
+        },
+        {
+          id: "smart-system",
+          text: "Prepare everything the night before (pack bag, pick clothes), keep a weekly punctuality tracker, and go to bed by 10 PM on school nights",
+          smartCriteria: { specific: true, measurable: true, achievable: true, relevant: true, timeBound: true },
+          feedback: "Perfect SMART system! Specific preparation steps, measurable tracking, achievable routines, all relevant to punctuality. This creates lasting habits!",
+          nextNodeId: "final",
+          score: 10
+        },
+        {
+          id: "extreme-system",
+          text: "Wake up at 5 AM, arrive to school at 6:30 AM, never do anything in the evening",
+          smartCriteria: { specific: true, measurable: true, achievable: false, relevant: false, timeBound: false },
+          feedback: "This is extreme and unsustainable! SMART goals should improve your life, not make it harder.",
+          nextNodeId: "final",
+          score: 1
+        }
+      ]
+    },
+
+    // RUNNING PATH
+    "running-1": {
+      id: "running-1",
+      scenario: "Running Faster",
+      question: "You currently run a mile in 10 minutes. There's a school track available after school. You have a fun run event in 8 weeks and want to improve your time.\n\nWhat's your running goal?",
+      context: "Remember SMART principles!",
+      category: "athletic",
+      choices: [
+        {
+          id: "vague-running",
+          text: "I want to run faster",
+          smartCriteria: { specific: false, measurable: false, achievable: true, relevant: true, timeBound: false },
+          feedback: "Too vague! How much faster? How will you measure it? When?",
+          nextNodeId: "running-2",
+          score: 2
+        },
+        {
+          id: "unrealistic-running",
+          text: "I'll run a 5-minute mile by next week",
+          smartCriteria: { specific: true, measurable: true, achievable: false, relevant: true, timeBound: true },
+          feedback: "Cutting your time in half in one week isn't achievable! Set realistic improvements.",
+          nextNodeId: "running-2",
+          score: 3
+        },
+        {
+          id: "smart-running",
+          text: "I will improve my mile time from 10 minutes to 8:30 within 8 weeks by running 3 times per week and doing interval training twice weekly",
+          smartCriteria: { specific: true, measurable: true, achievable: true, relevant: true, timeBound: true },
+          feedback: "Excellent SMART goal! Specific target (8:30), measurable (can time yourself), achievable (1.5 min improvement over 8 weeks), relevant (prepares for fun run), with specific training plan!",
+          nextNodeId: "running-2",
+          score: 10
+        }
+      ]
+    },
+
+    "running-2": {
+      id: "running-2",
+      scenario: "Training Plan",
+      question: "You've been running for 3 weeks and your time is now 9:15. You want to keep improving safely. What's the SMART approach?",
+      category: "athletic",
+      choices: [
+        {
+          id: "no-plan-running",
+          text: "Just run as fast as I can every day",
+          smartCriteria: { specific: false, measurable: false, achievable: false, relevant: true, timeBound: false },
+          feedback: "Running hard every day can lead to injury! SMART training includes rest and variety.",
+          nextNodeId: "final",
+          score: 1
+        },
+        {
+          id: "smart-training",
+          text: "Follow a schedule: Monday/Wednesday - interval sprints, Friday - distance run, Tuesday/Thursday - rest, track times weekly, stretch for 10 minutes after each run",
+          smartCriteria: { specific: true, measurable: true, achievable: true, relevant: true, timeBound: true },
+          feedback: "Outstanding SMART training plan! Specific workouts, measurable progress tracking, achievable with rest days, relevant exercises, and includes injury prevention (stretching). Perfect!",
+          nextNodeId: "final",
+          score: 10
+        },
+        {
+          id: "extreme-training",
+          text: "Run 10 miles every single day starting tomorrow",
+          smartCriteria: { specific: true, measurable: true, achievable: false, relevant: false, timeBound: false },
+          feedback: "This is dangerous for someone training for a mile! SMART goals match the training to the goal.",
+          nextNodeId: "final",
+          score: 1
+        }
+      ]
+    },
+
+    // DRAWING PATH
+    "drawing-1": {
+      id: "drawing-1",
+      scenario: "Improving Drawing Skills",
+      question: "You enjoy doodling but want to improve your drawing skills. You have sketchbooks and access to free online tutorials. Your art class has a portfolio review in 6 weeks.\n\nWhat's your drawing goal?",
+      context: "Make it SMART!",
+      category: "creative",
+      choices: [
+        {
+          id: "vague-drawing",
+          text: "I want to get better at drawing",
+          smartCriteria: { specific: false, measurable: false, achievable: true, relevant: true, timeBound: false },
+          feedback: "'Better' is too vague! What specifically do you want to improve? How will you measure progress?",
+          nextNodeId: "drawing-2",
+          score: 2
+        },
+        {
+          id: "unrealistic-drawing",
+          text: "I'll become a professional artist by next week",
+          smartCriteria: { specific: false, measurable: false, achievable: false, relevant: true, timeBound: true },
+          feedback: "Professional level takes years! Set realistic milestones for steady improvement.",
+          nextNodeId: "drawing-2",
+          score: 2
+        },
+        {
+          id: "smart-drawing",
+          text: "I will complete 30 practice sketches over 6 weeks by drawing for 20 minutes daily, focusing on faces one week and hands the next, and compile my best 10 for the portfolio review",
+          smartCriteria: { specific: true, measurable: true, achievable: true, relevant: true, timeBound: true },
+          feedback: "Perfect SMART goal! Specific focus areas (faces, hands), measurable (30 sketches, 10 for portfolio), achievable (20 min daily), relevant (portfolio review), time-bound (6 weeks)!",
+          nextNodeId: "drawing-2",
+          score: 10
+        }
+      ]
+    },
+
+    "drawing-2": {
+      id: "drawing-2",
+      scenario: "Getting Feedback",
+      question: "You've completed 15 sketches but aren't sure if you're improving. How do you get better using SMART principles?",
+      category: "creative",
+      choices: [
+        {
+          id: "keep-drawing",
+          text: "Just keep drawing the same things and hope I improve",
+          smartCriteria: { specific: false, measurable: false, achievable: true, relevant: false, timeBound: false },
+          feedback: "Repeating without feedback won't help you grow! SMART improvement needs assessment.",
+          nextNodeId: "final",
+          score: 1
+        },
+        {
+          id: "smart-feedback",
+          text: "Every week, compare current sketches to week 1, ask my art teacher for specific feedback on 2 pieces, watch one tutorial addressing my weak areas, and try the new technique 3 times",
+          smartCriteria: { specific: true, measurable: true, achievable: true, relevant: true, timeBound: true },
+          feedback: "Excellent SMART improvement plan! Specific actions (compare, ask teacher, watch tutorial), measurable (2 pieces, 3 tries), achievable weekly goals, relevant feedback, time-bound reviews!",
+          nextNodeId: "final",
+          score: 10
+        },
+        {
+          id: "overwhelming-feedback",
+          text: "Take 5 online courses, buy expensive art supplies, and practice 8 hours daily",
+          smartCriteria: { specific: true, measurable: true, achievable: false, relevant: false, timeBound: false },
+          feedback: "This is overwhelming and expensive! SMART goals use available resources efficiently.",
           nextNodeId: "final",
           score: 2
         }
